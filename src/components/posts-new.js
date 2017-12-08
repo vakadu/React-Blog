@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { createPost } from '../actions/index';
 
 class PostsNew extends Component{
     renderField(field){
@@ -24,7 +26,10 @@ class PostsNew extends Component{
 
     onSubmit(data){
         //this ==== component
-        console.log(data);
+        //console.log(data);
+        this.props.createPost(data, () => {
+            this.props.history.push('/');//after submitting form nad request is success go back to route '/'
+        });
     }
 
     render(){
@@ -78,6 +83,8 @@ function validate(values) {
 export default reduxForm({
     validate: validate,
     form: 'PostsNewForm'
-}) (PostsNew);
+}) (
+    connect(null, {createPost})(PostsNew)
+);
 
 //Field component is responsible for event handling and updating different pieces of state
