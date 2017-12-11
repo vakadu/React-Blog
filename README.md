@@ -10,7 +10,7 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 
 ```
 > git clone https://github.com/vakadu/React-Blog.git
-> cd ajax-restful-api
+> cd React-Blog
 > npm install
 > npm start
 ```
