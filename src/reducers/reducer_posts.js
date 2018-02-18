@@ -17,6 +17,7 @@ export default function (state = {}, action) {
 
             return { ...state, [action.payload.data.id]: action.payload.data };
         //take all the existing posts we have out of state object and put them into a new object we are about to return
+        //take action.payload.data.id makes its value as action.payload.data   
 
         case DELETE_POST:
             return _.omit(state, action.payload);
