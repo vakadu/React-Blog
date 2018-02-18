@@ -64,6 +64,10 @@ function validate(values) {
     const errors = {};
 
     //validate the inputs from values
+    if(values.title.length < 3){
+        errors.title = "Title must be atleast 3 characters";
+    }
+    
     if (!values.title || values.title.length < 3){
         errors.title = "Enter a Title";
     }
