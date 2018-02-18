@@ -59,6 +59,7 @@ class PostsNew extends Component{
     }
 }
 
+//validate function will be automatically by reduxForm
 function validate(values) {
     //console.log(values) -> {title: 'abc', categories: 'bcd', content: 'cde'}
     const errors = {};
